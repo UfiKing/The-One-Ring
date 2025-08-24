@@ -1,0 +1,2 @@
+/home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-ar qc libled_strip.a CMakeFiles/__idf_led_strip.dir/src/led_strip_api.c.obj CMakeFiles/__idf_led_strip.dir/src/led_strip_rmt_dev.c.obj CMakeFiles/__idf_led_strip.dir/src/led_strip_rmt_encoder.c.obj CMakeFiles/__idf_led_strip.dir/src/led_strip_spi_dev.c.obj
+/home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-ranlib libled_strip.a

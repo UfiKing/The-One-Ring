@@ -1,0 +1,11 @@
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c: In function 'app_main':
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:51:5: error: too few arguments to function 'led_strip_clear'
+   51 |     led_strip_clear();
+      |     ^~~~~~~~~~~~~~~
+In file included from /home/ufi/programming/The-One-Ring/main/TheOneRing.c:3:
+/home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip.h:92:11: note: declared here
+   92 | esp_err_t led_strip_clear(led_strip_handle_t strip);
+      |           ^~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5719: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

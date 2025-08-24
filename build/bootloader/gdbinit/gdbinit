@@ -1,0 +1,2 @@
+source /home/ufi/programming/The-One-Ring/build/bootloader/gdbinit/symbols
+source /home/ufi/programming/The-One-Ring/build/bootloader/gdbinit/connect

@@ -1,0 +1,7 @@
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c: In function 'app_main':
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:53:26: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+   53 |     for(uint8_t i = 0; i < 256; i ++){
+      |                          ^
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:59:28: warning: comparison is always true due to limited range of data type [-Wtype-limits]
+   59 |     for(uint8_t i = 255; i > -1 ; i --){
+      |                            ^

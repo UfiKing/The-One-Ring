@@ -1,0 +1,17 @@
+dependencies:
+  idf:
+    source:
+      type: idf
+    version: 5.4.2
+  led_strip:
+    dependencies: []
+    source:
+      path: /home/ufi/programming/The-One-Ring/components/led_strip
+      type: local
+    version: 3.0.1~1
+direct_dependencies:
+- espressif/led_strip
+- idf
+manifest_hash: 0fe44e25b6172c9f97cfb4088e9ec6950aff4578414680e3c53a783366d73f7d
+target: esp32
+version: 2.0.0

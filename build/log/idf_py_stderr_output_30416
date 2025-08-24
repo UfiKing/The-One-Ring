@@ -1,0 +1,12 @@
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c: In function 'app_main':
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:53:9: error: unknown type name 'uint8'; did you mean 'uint8_t'?
+   53 |     for(uint8 i = 0; i < 256; i ++){
+      |         ^~~~~
+      |         uint8_t
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:59:9: error: unknown type name 'uint8'; did you mean 'uint8_t'?
+   59 |     for(uint8 i = 255; i > -1 ; i --){
+      |         ^~~~~
+      |         uint8_t
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5719: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

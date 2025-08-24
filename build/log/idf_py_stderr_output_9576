@@ -1,0 +1,13 @@
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c: In function 'configure_led':
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:25:8: error: 'struct led_strip_extra_flags' has no member named 'incert_out'; did you mean 'invert_out'?
+   25 |       .incert_out = false,
+      |        ^~~~~~~~~~
+      |        invert_out
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c: In function 'app_main':
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:57:33: error: 'LED_STRIP_LED_COUNT' undeclared (first use in this function)
+   57 |             for (int i = 0; i < LED_STRIP_LED_COUNT; i++) {
+      |                                 ^~~~~~~~~~~~~~~~~~~
+/home/ufi/programming/The-One-Ring/main/TheOneRing.c:57:33: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5719: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2
