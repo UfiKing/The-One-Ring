@@ -1,5 +1,5 @@
 sdkconfig
-
+build/
 # Prerequisites
 *.d
 

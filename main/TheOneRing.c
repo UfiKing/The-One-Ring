@@ -44,7 +44,7 @@ led_strip_handle_t configure_led(void){
 
 }
 
-void breathe(uint16_t delay){
+void breathe(led_strip_handle_t led_strip, uint16_t delay){
   
      for(uint8_t i = 1; i != 0; i ++){
        for(uint8_t j = 0; j < LED_COUNT; j++){
@@ -70,8 +70,75 @@ void app_main(void){
   led_strip_clear(led_strip);
 
   while(1){
-     
-  
+    
+    for(uint8_t i = 0; i < LED_COUNT; i ++){
+      led_strip_set_pixel(led_strip, i, 255, 255, 255);
+
+      //led_strip_clear(led_strip);
+      if(i - 1 == - 1){
+        led_strip_set_pixel(led_strip, LED_COUNT - 1, 200, 200, 150);
+        led_strip_set_pixel(led_strip, LED_COUNT - 2, 150, 150, 100);
+        led_strip_set_pixel(led_strip, LED_COUNT - 3, 100, 100, 050);
+        led_strip_set_pixel(led_strip, LED_COUNT - 4, 050, 050, 000);
+        led_strip_set_pixel(led_strip, LED_COUNT - 5, 0,0,0);
+      }
+      else if(i - 2 == - 1){
+        led_strip_set_pixel(led_strip, LED_COUNT - 1, 150, 150, 100);
+        led_strip_set_pixel(led_strip, LED_COUNT - 2, 100, 100, 050);
+        led_strip_set_pixel(led_strip, LED_COUNT - 3, 050, 050, 000);
+        led_strip_set_pixel(led_strip, LED_COUNT - 4, 0,0,0);
+      }
+      else if(i - 3 == -1){
+        led_strip_set_pixel(led_strip, LED_COUNT - 1, 100, 100, 050);
+        led_strip_set_pixel(led_strip, LED_COUNT - 2, 050, 050, 000);
+        led_strip_set_pixel(led_strip, LED_COUNT - 3, 0,0,0);
+      }
+      else if(i - 4 == - 1){
+        led_strip_set_pixel(led_strip, LED_COUNT - 1, 50, 50, 00);
+        led_strip_set_pixel(led_strip, LED_COUNT - 2, 0,0,0);
+      }else if(i - 5 == 0){
+        led_strip_set_pixel(led_strip, LED_COUNT - 1, 0,0,0);
+      }
+      
+      else if(i + 1 == LED_COUNT){
+        led_strip_set_pixel(led_strip, 0, 200, 200, 150);
+        led_strip_set_pixel(led_strip, 1 , 150, 150, 100);
+        led_strip_set_pixel(led_strip, 2, 100, 100, 050);
+        led_strip_set_pixel(led_strip, 3, 050, 050, 000);
+        led_strip_set_pixel(led_strip, 4, 0,0,0);
+      }
+      else if(i + 2 == LED_COUNT){
+        led_strip_set_pixel(led_strip,0, 150, 150, 100);
+        led_strip_set_pixel(led_strip,1, 100, 100, 050);
+        led_strip_set_pixel(led_strip,2, 050, 050, 000);
+        led_strip_set_pixel(led_strip,3,0,0,0);
+      }
+      else if(i + 3 == LED_COUNT){
+        led_strip_set_pixel(led_strip, 0, 100, 100, 050);
+        led_strip_set_pixel(led_strip, 1, 050, 050, 000);
+        led_strip_set_pixel(led_strip, 2, 0,0,0);
+      }
+      else if(i + 4 == LED_COUNT){
+        led_strip_set_pixel(led_strip, 0, 50, 50, 00);
+        led_strip_set_pixel(led_strip, 1, 0,0,0);
+      }
+        led_strip_set_pixel(led_strip, i - 4, 050, 050, 000);
+        led_strip_set_pixel(led_strip, i - 3, 100, 100, 050);
+        led_strip_set_pixel(led_strip, i - 2, 150, 150, 100);
+        led_strip_set_pixel(led_strip, i - 1, 200, 200, 150);     
+      
+        led_strip_set_pixel(led_strip, i + 1, 200, 200, 150);
+        led_strip_set_pixel(led_strip, i + 2, 150, 150, 100);
+        led_strip_set_pixel(led_strip, i + 3, 100, 100, 050);
+        led_strip_set_pixel(led_strip, i + 4, 050, 050, 000);
+        
+        led_strip_set_pixel(led_strip, i - 5, 0,0,0);
+        led_strip_set_pixel(led_strip, i + 5, 0,0,0);
+
+      
+      led_strip_refresh(led_strip);
+      vTaskDelay(50  / portTICK_PERIOD_MS);
+    }
 
   }
 
