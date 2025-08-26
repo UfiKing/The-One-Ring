@@ -40,6 +40,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj
  /home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip_rmt.h
  /home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip_spi.h
  /home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip_types.h
+ /home/ufi/programming/esp-idf/components/bootloader_support/include/bootloader_random.h
  /home/ufi/programming/esp-idf/components/esp_common/include/esp_assert.h
  /home/ufi/programming/esp-idf/components/esp_common/include/esp_attr.h
  /home/ufi/programming/esp-idf/components/esp_common/include/esp_bit_defs.h
@@ -54,6 +55,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj
  /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h
  /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_intr_types.h
  /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_memory_utils.h
+ /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_random.h
  /home/ufi/programming/esp-idf/components/esp_hw_support/include/spinlock.h
  /home/ufi/programming/esp-idf/components/esp_rom/include/esp_rom_sys.h
  /home/ufi/programming/esp-idf/components/esp_system/include/esp_ipc.h

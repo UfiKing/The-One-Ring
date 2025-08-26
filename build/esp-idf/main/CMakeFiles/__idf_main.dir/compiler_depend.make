@@ -39,6 +39,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj: /home/ufi/programming/T
   /home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip_rmt.h \
   /home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip_spi.h \
   /home/ufi/programming/The-One-Ring/components/led_strip/include/led_strip_types.h \
+  /home/ufi/programming/esp-idf/components/bootloader_support/include/bootloader_random.h \
   /home/ufi/programming/esp-idf/components/esp_common/include/esp_assert.h \
   /home/ufi/programming/esp-idf/components/esp_common/include/esp_attr.h \
   /home/ufi/programming/esp-idf/components/esp_common/include/esp_bit_defs.h \
@@ -53,6 +54,7 @@ esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj: /home/ufi/programming/T
   /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h \
   /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_intr_types.h \
   /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_memory_utils.h \
+  /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_random.h \
   /home/ufi/programming/esp-idf/components/esp_hw_support/include/spinlock.h \
   /home/ufi/programming/esp-idf/components/esp_rom/include/esp_rom_sys.h \
   /home/ufi/programming/esp-idf/components/esp_system/include/esp_ipc.h \
@@ -181,6 +183,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj: /home/ufi/programming/T
 
 /home/ufi/programming/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/event_groups.h:
 
+/home/ufi/programming/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:
+
 /home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/_intsup.h:
 
 /home/ufi/programming/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/portable.h:
@@ -194,6 +198,8 @@ esp-idf/main/CMakeFiles/__idf_main.dir/TheOneRing.c.obj: /home/ufi/programming/T
 /home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/stdlib.h:
 
 /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_intr_alloc.h:
+
+/home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_random.h:
 
 /home/ufi/programming/esp-idf/components/log/include/esp_log_color.h:
 
@@ -317,6 +323,8 @@ config/sdkconfig.h:
 
 /home/ufi/programming/esp-idf/components/esp_system/include/esp_ipc.h:
 
+/home/ufi/programming/esp-idf/components/bootloader_support/include/bootloader_random.h:
+
 /home/ufi/programming/esp-idf/components/xtensa/include/xtensa/corebits.h:
 
 /home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/sys/config.h:
@@ -333,14 +341,12 @@ config/sdkconfig.h:
 
 /home/ufi/programming/esp-idf/components/esp_driver_spi/include/driver/spi_master.h:
 
-/home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h:
-
 /home/ufi/programming/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/deprecated_definitions.h:
+
+/home/ufi/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include/machine/ieeefp.h:
 
 /home/ufi/programming/esp-idf/components/esp_hw_support/include/esp_memory_utils.h:
 
 /home/ufi/programming/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/semphr.h:
 
 /home/ufi/programming/esp-idf/components/esp_hw_support/include/spinlock.h:
-
-/home/ufi/programming/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:
