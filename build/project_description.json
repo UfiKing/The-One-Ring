@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "TheOneRing",
-    "project_version":    "74618a0-dirty",
+    "project_version":    "1b1ee75-dirty",
     "project_path":       "/home/ufi/programming/The-One-Ring",
     "idf_path":           "/home/ufi/programming/esp-idf",
     "build_dir":          "/home/ufi/programming/The-One-Ring/build",

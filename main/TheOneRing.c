@@ -135,7 +135,7 @@ void lavaV1(led_strip_handle_t led_strip, uint16_t delay){
     uint32_t rand = esp_random();
     led_strip_set_pixel(led_strip, i, rand & 0b11111111,(rand >> 8) & 0b11111111, (rand >> 16 ) & 0b11111111);
   }
-  led_strip_refresh(led_strip);
+  //led_strip_refresh(led_strip);
   vTaskDelay(delay / portTICK_PERIOD_MS);  
 
 }
@@ -145,8 +145,32 @@ void app_main(void){
   led_strip_clear(led_strip);
   bootloader_random_enable();
 
+  uint8_t targets[LED_COUNT][3];
+  uint16_t steps = 25;
+  for(uint8_t i = 0; i < LED_COUNT; i++){
+    targets[i][0] = esp_random() & 0b11111111;
+    targets[i][1] = targets[i][0];
+    targets[i][2] = esp_random() & 0b11111111;
+    led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
+  }
   while(1){
+    for(uint8_t i = 0; i < LED_COUNT; i++){
+      targets[i][0] = targets[i][1];
+      targets[i][2] = esp_random() & 0b11111111;
+      led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
+    }   
+    led_strip_refresh(led_strip);
+    for(uint8_t j = 0; j < steps; j++){
+      for(uint8_t i = 0; i < LED_COUNT; i++){
+        int16_t change = targets[i][2] - targets[i][0];
+        change = change / 10;
+        targets[i][1] = targets[i][1] + change;
+        led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
       }
+      led_strip_refresh(led_strip);
+      vTaskDelay(50 / portTICK_PERIOD_MS);
+    }
+  }
 
 }
 
