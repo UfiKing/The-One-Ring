@@ -205,6 +205,8 @@ esp-idf/esp_system/ld/sections.ld: esp-idf/perfmon/libperfmon.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/rt/librt.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/spiffs/libspiffs.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/wifi_provisioning/libwifi_provisioning.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp32-smbus/libesp32-smbus.a
+esp-idf/esp_system/ld/sections.ld: esp-idf/esp32-i2c-lcd1602/libesp32-i2c-lcd1602.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/led_strip/libled_strip.a
 esp-idf/esp_system/ld/sections.ld: esp-idf/main/libmain.a
 esp-idf/esp_system/ld/sections.ld: /home/ufi/programming/The-One-Ring/sdkconfig

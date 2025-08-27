@@ -27,6 +27,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "flash_args"
   "flash_args.in"
   "ldgen_libraries.in"
+  "/home/ufi/programming/The-One-Ring/components/esp32-i2c-lcd1602/CMakeLists.txt"
+  "/home/ufi/programming/The-One-Ring/components/esp32-smbus/CMakeLists.txt"
   "/home/ufi/programming/The-One-Ring/components/led_strip/CMakeLists.txt"
   "/home/ufi/programming/The-One-Ring/components/led_strip/idf_component.yml"
   "/home/ufi/programming/The-One-Ring/main/CMakeLists.txt"
@@ -431,6 +433,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "esp-idf/ulp/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/usb/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/wifi_provisioning/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/esp32-smbus/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/esp32-i2c-lcd1602/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/led_strip/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/main/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
@@ -567,6 +571,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "esp-idf/rt/CMakeFiles/__idf_rt.dir/DependInfo.cmake"
   "esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/DependInfo.cmake"
   "esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/DependInfo.cmake"
+  "esp-idf/esp32-smbus/CMakeFiles/__idf_esp32-smbus.dir/DependInfo.cmake"
+  "esp-idf/esp32-i2c-lcd1602/CMakeFiles/__idf_esp32-i2c-lcd1602.dir/DependInfo.cmake"
   "esp-idf/led_strip/CMakeFiles/__idf_led_strip.dir/DependInfo.cmake"
   "esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
   )

@@ -5,6 +5,7 @@
 #include "esp_err.h"
 #include "esp_random.h"
 #include "bootloader_random.h"
+#include <stdbool.h>
 
 //#define LED_COUNT 71
 #define LED_STRIP_MEMORY_BLOCK_WORDS 0
@@ -45,6 +46,7 @@ led_strip_handle_t configure_led(void){
 
 
 }
+
 
 void breathe(led_strip_handle_t led_strip, uint16_t delay){
   
@@ -137,23 +139,17 @@ void lavaV1(led_strip_handle_t led_strip, uint16_t delay){
   }
   //led_strip_refresh(led_strip);
   vTaskDelay(delay / portTICK_PERIOD_MS);  
-
 }
 
-void app_main(void){
-  led_strip_handle_t led_strip = configure_led();
-  led_strip_clear(led_strip);
-  bootloader_random_enable();
-
+void lavaV2(led_strip_handle_t led_strip, uint16_t delay, uint8_t steps, uint32_t repetitons){
   uint8_t targets[LED_COUNT][3];
-  uint16_t steps = 25;
   for(uint8_t i = 0; i < LED_COUNT; i++){
     targets[i][0] = esp_random() & 0b11111111;
     targets[i][1] = targets[i][0];
     targets[i][2] = esp_random() & 0b11111111;
     led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
   }
-  while(1){
+  for(uint32_t x = 0; x < repetitons; x++){
     for(uint8_t i = 0; i < LED_COUNT; i++){
       targets[i][0] = targets[i][1];
       targets[i][2] = esp_random() & 0b11111111;
@@ -163,15 +159,163 @@ void app_main(void){
     for(uint8_t j = 0; j < steps; j++){
       for(uint8_t i = 0; i < LED_COUNT; i++){
         int16_t change = targets[i][2] - targets[i][0];
-        change = change / 10;
+        change = change / steps;
         targets[i][1] = targets[i][1] + change;
         led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
       }
       led_strip_refresh(led_strip);
-      vTaskDelay(50 / portTICK_PERIOD_MS);
+      vTaskDelay(delay / portTICK_PERIOD_MS);
     }
   }
 
+}
+//TODO: make better flicker function 
+void flicker(led_strip_handle_t led_strip, uint16_t delay, uint8_t steps, uint32_t repetitons){
+  uint8_t targets[LED_COUNT][3];
+  for(uint8_t i = 0; i < LED_COUNT; i++){
+    targets[i][0] = esp_random() & 0b11111111;
+    targets[i][1] = targets[i][0];
+    targets[i][2] = esp_random() & 0b11111111;
+    led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
+  }
+  for(uint32_t x = 0; x < repetitons; x++){
+    for(uint8_t i = 0; i < LED_COUNT; i++){
+      targets[i][0] = targets[i][1];
+      targets[i][2] = esp_random() & 0b11111111;
+      led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
+    }   
+    led_strip_refresh(led_strip);
+    for(uint8_t j = 0; j < 10; j++){
+      for(uint8_t i = 0; i < LED_COUNT; i++){
+        int16_t change = targets[i][2] - targets[i][0];
+        change = change / steps;
+        targets[i][1] = targets[i][1] + change;
+        led_strip_set_pixel(led_strip, i, targets[i][1], targets[i][1], targets[i][1]);
+      }
+      led_strip_refresh(led_strip);
+      vTaskDelay(delay / portTICK_PERIOD_MS);
+    }
+  }
+
+}
+
+
+void lavaV3(led_strip_handle_t led_strip, uint16_t delay, uint8_t steps, uint32_t repetitons){
+  uint8_t targetsRED[LED_COUNT][3];
+  uint8_t targetsGREEN[LED_COUNT][3];
+  uint8_t targetsBLUE[LED_COUNT][3];
+  for(uint8_t i = 0; i < LED_COUNT; i++){
+    targetsRED[i][0] = esp_random() & 0b11111111;
+    targetsRED[i][1] = targetsRED[i][0];
+    targetsRED[i][2] = esp_random() & 0b11111111;
+      
+    targetsGREEN[i][0] = esp_random() & 0b11111111;
+    targetsGREEN[i][1] = targetsGREEN[i][0];
+    targetsGREEN[i][2] = esp_random() & 0b11111111;
+
+    targetsBLUE[i][0] = esp_random() & 0b11111111;
+    targetsBLUE[i][1] = targetsBLUE[i][0];
+    targetsBLUE[i][2] = esp_random() & 0b11111111;
+
+
+      
+    led_strip_set_pixel(led_strip, i, targetsRED[i][1], targetsGREEN[i][1], targetsBLUE[i][1]);
+  }
+  for(uint32_t x = 0; x < repetitons; x++){
+    for(uint8_t i = 0; i < LED_COUNT; i++){
+
+      targetsRED[i][0] = targetsRED[i][1];
+      targetsRED[i][2] = esp_random() & 0b11111111;
+        
+      targetsGREEN[i][0] = targetsGREEN[i][1];
+      targetsGREEN[i][2] = esp_random() & 0b11111111;
+        
+      targetsBLUE[i][0] = targetsBLUE[i][1];
+      targetsBLUE[i][2] = esp_random() & 0b11111111;
+        
+      led_strip_set_pixel(led_strip, i, targetsRED[i][1], targetsGREEN[i][1], targetsBLUE[i][1]);
+    }   
+    led_strip_refresh(led_strip);
+    for(uint8_t j = 0; j < steps; j++){
+      for(uint8_t i = 0; i < LED_COUNT; i++){
+        int16_t changeRED = targetsRED[i][2] - targetsRED[i][0];
+        changeRED = changeRED / steps;
+        targetsRED[i][1] = targetsRED[i][1] + changeRED;       
+          
+        int16_t changeGREEN = targetsGREEN[i][2] - targetsGREEN[i][0];
+        changeGREEN = changeGREEN / steps;
+        targetsGREEN[i][1] = targetsGREEN[i][1] + changeGREEN;         
+          
+        int16_t changeBLUE = targetsBLUE[i][2] - targetsBLUE[i][0];
+        changeBLUE = changeBLUE / steps;
+        targetsBLUE[i][1] = targetsBLUE[i][1] + changeBLUE;
+        led_strip_set_pixel(led_strip, i, targetsRED[i][1], targetsGREEN[i][1], targetsBLUE[i][1]);
+      }
+      led_strip_refresh(led_strip);
+      vTaskDelay(delay / portTICK_PERIOD_MS);
+    }
+  }
+}
+
+
+
+
+void app_main(void){
+  led_strip_handle_t led_strip = configure_led();
+  led_strip_clear(led_strip);
+  bootloader_random_enable();
+  uint8_t delay = 50;
+  uint32_t repetitons = 0 - 1;
+  uint8_t steps = 20;
+  
+  /*i2c_master_bus_handle_t i2c_bus = NULL;
+  i2c_master_bus_config_t bus_config = {
+    .clk_source = I2C_CLK_SRC_DEFAULT,
+    .glitch_ignore_cnt = 7,
+    .i2c_port = -1,
+    .sda_io_num = 18,
+    .scl_io_num = 19,
+    .flags.enable_internal_pullup = true,
+  };
+
+  ESP_ERROR_CHECK(i2c_new_master_bus(&bus_config, &i2c_bus));
+    
+  esp_lcd_panel_io_handle_t io_handle = NULL;
+  esp_lcd_panel_io_i2c_config_t io_config = {
+    .dev_addr = 27,
+    .scl_speed_hz = 250000,
+    .control_phase_bytes = 1,
+    .dc_bit_offset = 6,
+    .lcd_cmd_bits = 8,
+    .lcd_param_bits = 8,
+  };
+  ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c(i2c_bus, &io_config, &io_handle));
+
+  esp_lcd_panel_handle_t lcd = NULL;
+  esp_lcd_panel_dev_config_t panel_config = {
+    .bits_per_pixel = 1,
+    .reset_gpio_num = -1,
+  };
+  ESP_ERROR_CHECK(esp_lcd_new_panel_ssd1306(io_handle, &panel_config, &lcd));
+*/
+
+  ESP_ERROR_CHECK(i2cdev_init());
+
+  lcd1602_t lcd;
+  ESP_ERROR_CHECK(lcd1602_init_desc(&lcd, 0x27, I2C_NUM_0, 18, 19));
+  ESP_ERROR_CHECK(lcd1602_init(&lcd));
+  lcd1602_set_backlight(&lcd, true);
+  
+  lcd1602_set_cursor(&lcd, 0, 0);
+  lcd1602_write_string(&lcd, "Hello world");
+  lcd1602_set_cursor(&lcd, 0,1);
+  lcd1602_write_string(&lcd, "Pelin");
+
+
+  while(1){
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
+
+  }
 }
 
   
