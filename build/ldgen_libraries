@@ -81,7 +81,6 @@
 /home/ufi/programming/The-One-Ring/build/esp-idf/rt/librt.a
 /home/ufi/programming/The-One-Ring/build/esp-idf/spiffs/libspiffs.a
 /home/ufi/programming/The-One-Ring/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
-/home/ufi/programming/The-One-Ring/build/esp-idf/esp32-smbus/libesp32-smbus.a
-/home/ufi/programming/The-One-Ring/build/esp-idf/esp32-i2c-lcd1602/libesp32-i2c-lcd1602.a
 /home/ufi/programming/The-One-Ring/build/esp-idf/led_strip/libled_strip.a
+/home/ufi/programming/The-One-Ring/build/esp-idf/vgerwen__lcd1602/libvgerwen__lcd1602.a
 /home/ufi/programming/The-One-Ring/build/esp-idf/main/libmain.a

@@ -1852,32 +1852,6 @@ __idf_wifi_provisioning/fast:
 .PHONY : __idf_wifi_provisioning/fast
 
 #=============================================================================
-# Target rules for targets named __idf_esp32-smbus
-
-# Build rule for target.
-__idf_esp32-smbus: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp32-smbus
-.PHONY : __idf_esp32-smbus
-
-# fast build rule for target.
-__idf_esp32-smbus/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp32-smbus/CMakeFiles/__idf_esp32-smbus.dir/build.make esp-idf/esp32-smbus/CMakeFiles/__idf_esp32-smbus.dir/build
-.PHONY : __idf_esp32-smbus/fast
-
-#=============================================================================
-# Target rules for targets named __idf_esp32-i2c-lcd1602
-
-# Build rule for target.
-__idf_esp32-i2c-lcd1602: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_esp32-i2c-lcd1602
-.PHONY : __idf_esp32-i2c-lcd1602
-
-# fast build rule for target.
-__idf_esp32-i2c-lcd1602/fast:
-	$(MAKE) $(MAKESILENT) -f esp-idf/esp32-i2c-lcd1602/CMakeFiles/__idf_esp32-i2c-lcd1602.dir/build.make esp-idf/esp32-i2c-lcd1602/CMakeFiles/__idf_esp32-i2c-lcd1602.dir/build
-.PHONY : __idf_esp32-i2c-lcd1602/fast
-
-#=============================================================================
 # Target rules for targets named __idf_led_strip
 
 # Build rule for target.
@@ -1889,6 +1863,19 @@ __idf_led_strip: cmake_check_build_system
 __idf_led_strip/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/led_strip/CMakeFiles/__idf_led_strip.dir/build.make esp-idf/led_strip/CMakeFiles/__idf_led_strip.dir/build
 .PHONY : __idf_led_strip/fast
+
+#=============================================================================
+# Target rules for targets named __idf_vgerwen__lcd1602
+
+# Build rule for target.
+__idf_vgerwen__lcd1602: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 __idf_vgerwen__lcd1602
+.PHONY : __idf_vgerwen__lcd1602
+
+# fast build rule for target.
+__idf_vgerwen__lcd1602/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/vgerwen__lcd1602/CMakeFiles/__idf_vgerwen__lcd1602.dir/build.make esp-idf/vgerwen__lcd1602/CMakeFiles/__idf_vgerwen__lcd1602.dir/build
+.PHONY : __idf_vgerwen__lcd1602/fast
 
 #=============================================================================
 # Target rules for targets named __idf_main
@@ -1990,8 +1977,6 @@ help:
 	@echo "... __idf_driver"
 	@echo "... __idf_efuse"
 	@echo "... __idf_esp-tls"
-	@echo "... __idf_esp32-i2c-lcd1602"
-	@echo "... __idf_esp32-smbus"
 	@echo "... __idf_esp_adc"
 	@echo "... __idf_esp_app_format"
 	@echo "... __idf_esp_bootloader_format"
@@ -2064,6 +2049,7 @@ help:
 	@echo "... __idf_tcp_transport"
 	@echo "... __idf_unity"
 	@echo "... __idf_vfs"
+	@echo "... __idf_vgerwen__lcd1602"
 	@echo "... __idf_wear_levelling"
 	@echo "... __idf_wifi_provisioning"
 	@echo "... __idf_wpa_supplicant"

@@ -7,6 +7,8 @@
 #include "bootloader_random.h"
 #include <stdbool.h>
 
+#include "1602_driver.h"
+
 //#define LED_COUNT 71
 #define LED_STRIP_MEMORY_BLOCK_WORDS 0
 #define LED_STRIP_USE_DMA 0 
@@ -170,7 +172,7 @@ void lavaV2(led_strip_handle_t led_strip, uint16_t delay, uint8_t steps, uint32_
 
 }
 //TODO: make better flicker function 
-void flicker(led_strip_handle_t led_strip, uint16_t delay, uint8_t steps, uint32_t repetitons){
+void flickerV1(led_strip_handle_t led_strip, uint16_t delay, uint8_t steps, uint32_t repetitons){
   uint8_t targets[LED_COUNT][3];
   for(uint8_t i = 0; i < LED_COUNT; i++){
     targets[i][0] = esp_random() & 0b11111111;
@@ -264,56 +266,13 @@ void app_main(void){
   led_strip_handle_t led_strip = configure_led();
   led_strip_clear(led_strip);
   bootloader_random_enable();
-  uint8_t delay = 50;
+  uint8_t delay = 10;
   uint32_t repetitons = 0 - 1;
   uint8_t steps = 20;
-  
-  /*i2c_master_bus_handle_t i2c_bus = NULL;
-  i2c_master_bus_config_t bus_config = {
-    .clk_source = I2C_CLK_SRC_DEFAULT,
-    .glitch_ignore_cnt = 7,
-    .i2c_port = -1,
-    .sda_io_num = 18,
-    .scl_io_num = 19,
-    .flags.enable_internal_pullup = true,
-  };
-
-  ESP_ERROR_CHECK(i2c_new_master_bus(&bus_config, &i2c_bus));
-    
-  esp_lcd_panel_io_handle_t io_handle = NULL;
-  esp_lcd_panel_io_i2c_config_t io_config = {
-    .dev_addr = 27,
-    .scl_speed_hz = 250000,
-    .control_phase_bytes = 1,
-    .dc_bit_offset = 6,
-    .lcd_cmd_bits = 8,
-    .lcd_param_bits = 8,
-  };
-  ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c(i2c_bus, &io_config, &io_handle));
-
-  esp_lcd_panel_handle_t lcd = NULL;
-  esp_lcd_panel_dev_config_t panel_config = {
-    .bits_per_pixel = 1,
-    .reset_gpio_num = -1,
-  };
-  ESP_ERROR_CHECK(esp_lcd_new_panel_ssd1306(io_handle, &panel_config, &lcd));
-*/
-
-  ESP_ERROR_CHECK(i2cdev_init());
-
-  lcd1602_t lcd;
-  ESP_ERROR_CHECK(lcd1602_init_desc(&lcd, 0x27, I2C_NUM_0, 18, 19));
-  ESP_ERROR_CHECK(lcd1602_init(&lcd));
-  lcd1602_set_backlight(&lcd, true);
-  
-  lcd1602_set_cursor(&lcd, 0, 0);
-  lcd1602_write_string(&lcd, "Hello world");
-  lcd1602_set_cursor(&lcd, 0,1);
-  lcd1602_write_string(&lcd, "Pelin");
 
 
   while(1){
-    vTaskDelay(1000 / portTICK_PERIOD_MS);
+    lavaV3(led_strip, delay, steps, repetitons);
 
   }
 }

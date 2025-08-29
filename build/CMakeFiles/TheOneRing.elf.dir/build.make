@@ -179,9 +179,8 @@ TheOneRing.elf: esp-idf/perfmon/libperfmon.a
 TheOneRing.elf: esp-idf/rt/librt.a
 TheOneRing.elf: esp-idf/spiffs/libspiffs.a
 TheOneRing.elf: esp-idf/wifi_provisioning/libwifi_provisioning.a
-TheOneRing.elf: esp-idf/esp32-smbus/libesp32-smbus.a
-TheOneRing.elf: esp-idf/esp32-i2c-lcd1602/libesp32-i2c-lcd1602.a
 TheOneRing.elf: esp-idf/led_strip/libled_strip.a
+TheOneRing.elf: esp-idf/vgerwen__lcd1602/libvgerwen__lcd1602.a
 TheOneRing.elf: esp-idf/main/libmain.a
 TheOneRing.elf: esp-idf/app_trace/libapp_trace.a
 TheOneRing.elf: esp-idf/unity/libunity.a
@@ -191,10 +190,8 @@ TheOneRing.elf: esp-idf/protocomm/libprotocomm.a
 TheOneRing.elf: esp-idf/console/libconsole.a
 TheOneRing.elf: esp-idf/protobuf-c/libprotobuf-c.a
 TheOneRing.elf: esp-idf/json/libjson.a
-TheOneRing.elf: esp-idf/esp_lcd/libesp_lcd.a
-TheOneRing.elf: esp-idf/esp32-i2c-lcd1602/libesp32-i2c-lcd1602.a
-TheOneRing.elf: esp-idf/esp32-smbus/libesp32-smbus.a
 TheOneRing.elf: esp-idf/led_strip/libled_strip.a
+TheOneRing.elf: esp-idf/vgerwen__lcd1602/libvgerwen__lcd1602.a
 TheOneRing.elf: esp-idf/xtensa/libxtensa.a
 TheOneRing.elf: esp-idf/esp_driver_gpio/libesp_driver_gpio.a
 TheOneRing.elf: esp-idf/esp_pm/libesp_pm.a

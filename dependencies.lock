@@ -9,9 +9,20 @@ dependencies:
       path: /home/ufi/programming/The-One-Ring/components/led_strip
       type: local
     version: 3.0.1~1
+  vgerwen/lcd1602:
+    component_hash: ea0c4eb9d677b8fea81794b9ec6d8e71557261effeebb11cc5a0695b6687ffdd
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.4.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.1.0
 direct_dependencies:
 - espressif/led_strip
 - idf
-manifest_hash: 0fe44e25b6172c9f97cfb4088e9ec6950aff4578414680e3c53a783366d73f7d
+- vgerwen/lcd1602
+manifest_hash: 0342cfcc9cdcaa72a0b1c0384fb6a245e56876e8624fa322906a98ab1955a101
 target: esp32
 version: 2.0.0

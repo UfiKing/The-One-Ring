@@ -30930,6 +30930,74 @@
                 "id": "component-config-wi-fi-provisioning-manager",
                 "title": "Wi-Fi Provisioning Manager",
                 "type": "menu"
+            },
+            {
+                "children": [
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option sets the ESP32 GPIO pin for LCD Data 4",
+                        "id": "DATA_0_PIN",
+                        "name": "DATA_0_PIN",
+                        "range": null,
+                        "title": "GPIO pin number for LCD Data 4",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option sets the ESP32 GPIO pin for LCD Data 5",
+                        "id": "DATA_1_PIN",
+                        "name": "DATA_1_PIN",
+                        "range": null,
+                        "title": "GPIO pin number for LCD Data 5",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option sets the ESP32 GPIO pin for LCD Data 6",
+                        "id": "DATA_2_PIN",
+                        "name": "DATA_2_PIN",
+                        "range": null,
+                        "title": "GPIO pin number for LCD Data 6",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option sets the ESP32 GPIO pin for LCD Data 7",
+                        "id": "DATA_3_PIN",
+                        "name": "DATA_3_PIN",
+                        "range": null,
+                        "title": "GPIO pin number for LCD Data 7",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option sets the ESP32 GPIO pin for LCD Enable",
+                        "id": "ENABLE_PIN",
+                        "name": "ENABLE_PIN",
+                        "range": null,
+                        "title": "GPIO pin number for Enable Pin",
+                        "type": "int"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "This option sets the ESP32 GPIO pin for LCD Register Select",
+                        "id": "REGISTER_SELECT_PIN",
+                        "name": "REGISTER_SELECT_PIN",
+                        "range": null,
+                        "title": "GPIO pin number for Register Select",
+                        "type": "int"
+                    }
+                ],
+                "depends_on": null,
+                "id": "component-config-app-main",
+                "title": "App main",
+                "type": "menu"
             }
         ],
         "depends_on": null,
